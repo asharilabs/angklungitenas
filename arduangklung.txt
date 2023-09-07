@@ -1,0 +1,40 @@
+const int LED = 8;
+
+void setup(){
+    Serial.begin(9600);
+    Serial.println("angklung itenas");
+
+    pinMode(LED, OUTPUT);
+}
+
+void loop(){
+
+    int data = Serial.read();
+    
+    if( data > 0){
+        Serial.println(data);
+
+        // data = a
+        if( data == 97){
+            digitalWrite(LED, HIGH);
+        }
+        else if( data == 98){
+            digitalWrite(LED, LOW);
+        }
+        else if( data == 99){
+            //
+        }
+    }
+
+    // if( data.indexOf("lagu1") != -1){
+    //     Serial.println("incoming lagu 1");
+
+    //     digitalWrite(13, HIGH);
+    // }
+    // else if( data.indexOf("lagu2") != -1){
+    //     Serial.println("incoming lagu2");
+    //     digitalWrite(13, LOW);
+    // }
+
+    delay(50);
+}
